@@ -85,6 +85,12 @@ the ones that make sense to them.
   this authentication is being made. Only override this if you know what you're doing, the client side is a better
   place to configure this setting (if configured there, it will be used here).
 * sessionKey. The name of the key used to store the email in the session. Defaults to `email`.
+* emailFilter. Function to filter incoming emails. Can be used to restrict login to corporations. Accepts
+  everything by default. Parameters:
+** `email`: the email to check
+** `valid`: the no arg callback to call if the email is accepted
+** `invalid`: the callback to call if the email is not accepted, providing the rejection message as its only
+   argument
 
 ## Interface (Client)
 
